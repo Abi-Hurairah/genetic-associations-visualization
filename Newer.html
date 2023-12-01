@@ -29,7 +29,7 @@
         // SPARQL endpoint URL
         const sparqlEndpoint = 'https://query.wikidata.org/sparql';
 
-        // SPARQL query
+        // SPARQL query, could be split
         const sparqlQuery = `
         SELECT ?geneLabel ?disease2Label
         WHERE
@@ -44,7 +44,7 @@
 
         const url = `${sparqlEndpoint}?query=${encodeURIComponent(sparqlQuery)}&format=json`;
 
-        let jsonData; // Variable to store the JSON document
+        let jsonData; 
 
         // Function to fetch and update data
         function fetchDataAndUpdate() {
@@ -68,7 +68,7 @@
         fetchDataAndUpdate();
 
         // Callback loop to fetch and update data every 1 hour (adjust as needed)
-        setInterval(fetchDataAndUpdate, 36000); // 1 hour = 60 minutes * 60 seconds * 1000 milliseconds
+        setInterval(fetchDataAndUpdate, 36000); // interval is in miliseconds
 
         // Function to process jsonData
         function processJsonData(jsonData) {
@@ -168,7 +168,7 @@
                     var x = Math.cos(angle) * distance;
                     var y = Math.sin(angle) * distance;
 
-                    if (angle > Math.PI/2 || angle <-Math.PI/2)  // Rotates the text. I ensured readability
+                    if (angle > Math.PI/2 || angle <-Math.PI/2)  // Rotates the text for easy reading.
                         return 'translate(' + x + ',' + y + ') rotate(' + (angle * 180 / Math.PI + 180) + ')';
                     else
                         return 'translate(' + x + ',' + y + ') rotate(' + (angle * 180 / Math.PI) + ')';
