@@ -3,11 +3,8 @@ It is known that certain diseases have genetic predispositions. However, we also
 
 The data is fetched from the Wikidata SPARQL endpoint. The SPARQL query used in the project is located in the script section of the [source code](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/Source%20Code/Source%20Code.html).
 
-# Research Question
+# Question
 Are any of the genetic predispositions for certain disease also present in other diseases? 
-
-
-
 
 # Screenshots
 ![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Demonstration.png)
@@ -16,4 +13,5 @@ Are any of the genetic predispositions for certain disease also present in other
 * Open the file in a web browser
 * Explore the interactive pie chart to understand the shared genetic predispositions
 * Hover over the segments to view more detailed information about genes and associated diseases
-* Use the search functionality to find the case for other diseases. Note that you need to find the Wikidata entry for the disease and write the code (Q...) into the search box
+* Use the search functionality to find the case for other diseases. Note that you need to find the Wikidata entry for the disease and write the code (Q...) into the search box. Example below
+![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
