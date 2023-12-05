@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>IBD Genetic Predispositions</title>
+    <title>Shared Genetic Predispositions</title>
     <!-- Import D3 visualization library -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <style>
@@ -21,7 +21,14 @@
 </head>
 
 <body>
-    <h style="font-size: 30px;">Inflammatory Bowel Syndrome's Shared Genetic Predispositions with Other Diseases </h>
+    <b style="font-size: 30px; ">Find Shared Genetic Predispositions Across Diseases <br></b>
+    <h style="font-size: 18px;">Use the wikidata disease codes to find a disease and discover shared genetic predispositions with other diseases. For example, Q917447 corresponds to Inflammatory Bowel Diseases in Wikidata.</h>
+    <!--Input for Search Functionality-->
+    <div>
+        <label for="diseaseSearch">Search for Disease:</label>
+        <input type="text" id="diseaseSearch" placeholder="Enter disease name" value="Q917447"></input>
+        <button onclick="searchForDisease()">Search</button>
+    </div>
     <div id="chart"></div>
     <div id="tooltip"></div>
 
@@ -29,8 +36,8 @@
         // SPARQL endpoint URL
         const sparqlEndpoint = 'https://query.wikidata.org/sparql';
 
-        // SPARQL query, could be split
-        const sparqlQuery = `
+        // SPARQL query, the default is inflammatory bowel disease
+        let sparqlQuery = `
         SELECT ?geneLabel ?disease2Label
         WHERE
         { 
@@ -42,9 +49,50 @@
             SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
         }`;
 
-        const url = `${sparqlEndpoint}?query=${encodeURIComponent(sparqlQuery)}&format=json`;
+        let url = `${sparqlEndpoint}?query=${encodeURIComponent(sparqlQuery)}&format=json`;
 
         let jsonData; 
+
+        function searchForDisease() {
+            // Get the disease name from the input field
+            const diseaseName = document.getElementById('diseaseSearch').value.trim();
+
+            if (diseaseName === '') {
+                alert('Please enter a disease name.');
+                return;
+            }
+
+            // Modify the SPARQL query to include the selected disease
+            const sparqlQuery = `
+                SELECT ?geneLabel ?disease2Label
+                WHERE
+                { 
+                    VALUES ?disease { wd:${diseaseName}} # Add more diseases as needed
+                    ?gene wdt:P2293 ?disease2.
+                    ?gene wdt:P2293 ?disease.
+            
+                    FILTER (?disease2 != ?disease)
+                    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
+                }`;
+
+            url = `${sparqlEndpoint}?query=${encodeURIComponent(sparqlQuery)}&format=json`;
+
+            fetch(url, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                jsonData = data.results.bindings;
+                console.log(jsonData);
+
+                // Call a function or execute code that depends on jsonData
+                processJsonData(jsonData);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
 
         // Function to fetch and update data
         function fetchDataAndUpdate() {
@@ -72,8 +120,9 @@
 
         // Function to process jsonData
         function processJsonData(jsonData) {
+            // Removes previous chart
             d3.select("#chart svg").remove();
-            // set the dimensions and margins of the pie chart
+            // Set the dimensions and margins of the pie chart
             var width = 550,
                 height = 550,
                 margin = 50
@@ -164,7 +213,7 @@
                     // move the text slightly outward from the center along the line
                     var angle = (d.startAngle + d.endAngle) / 2;
                     var distance = radius * 0.6;
-                    var angle = Math.atan2(pos[1], pos[0]); // Converts angle from center to edge in terms of radians
+                    var angle = Math.atan2(pos[1], pos[0]); // Converts angle from center to edge in terms of radians, based on ray from (0,0) to (x,y)
                     var x = Math.cos(angle) * distance;
                     var y = Math.sin(angle) * distance;
 
