@@ -7,7 +7,10 @@ The data is fetched from the Wikidata SPARQL endpoint. The SPARQL query used in 
 Are any of the genetic predispositions for certain disease also present in other diseases? 
 
 # Screenshots
+Website
 ![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Demonstration.png)
+A Wikidata entry for Inflammatory Bowel Diseases
+![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
 # Usage
 * Download the source code [source code](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/Source%20Code/Source%20Code.html) by clicking the download button above the code
 * Open the file in a web browser
@@ -15,4 +18,4 @@ Are any of the genetic predispositions for certain disease also present in other
 * Hover over the segments to view more detailed information about genes and associated diseases
 * Use the search functionality to find the case for other diseases. Note that you need to find the Wikidata entry for the disease and write the code (Q...) into the search box. Example below
 
-![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
+![Hello](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
