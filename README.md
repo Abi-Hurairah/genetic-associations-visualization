@@ -14,4 +14,5 @@ Are any of the genetic predispositions for certain disease also present in other
 * Explore the interactive pie chart to understand the shared genetic predispositions
 * Hover over the segments to view more detailed information about genes and associated diseases
 * Use the search functionality to find the case for other diseases. Note that you need to find the Wikidata entry for the disease and write the code (Q...) into the search box. Example below
+
 ![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
