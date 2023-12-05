@@ -13,7 +13,7 @@ A Wikidata entry for Inflammatory Bowel Diseases
 ![](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
 # Usage
 * Download the source code [source code](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/Source%20Code/Source%20Code.html) by clicking the download button above the code
-* Open the file in a web browser
+* Open the file in a web browser. You will see Inflammatory Bowel Diseases' genetic common genetic predispositions which is the default
 * Explore the interactive pie chart to understand the shared genetic predispositions
 * Hover over the segments to view more detailed information about genes and associated diseases
 * Use the search functionality to find the case for other diseases. Note that you need to find the Wikidata entry for the disease and write the code (Q...) into the search box. Example below
