@@ -21,4 +21,6 @@ A Wikidata entry for Inflammatory Bowel Diseases
 ![Hello](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
 
 # Areas for Improvement
-* The user needs to manually search the Wikidata entry to find the Wikidata ID for a disease, it might be possible to skip this step 
+If you wish to contribute, please see the ![instructions here](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/CONTRIBUTING.md)
+* The user needs to manually search the Wikidata entry to find the Wikidata ID for a disease, it might be possible to skip this step
+
