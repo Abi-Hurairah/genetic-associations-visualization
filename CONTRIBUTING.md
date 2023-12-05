@@ -1,4 +1,4 @@
-Contributions are welcome. Note that by contributing to this project, you agree that your contributions will be licensed under the MIT License.
+Contributions are welcome. Note that by contributing to this project, you agree that your contributions will be licensed under the MIT License. Note that D3.js is a dependency to create, update, and handle interactions with the pie chart, as well as to manipulate the DOM (Document Object Model) for dynamic visualizations.
 
 # How to Contribute
 * Fork the repository to your GitHub account.
