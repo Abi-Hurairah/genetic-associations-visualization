@@ -20,7 +20,10 @@ A Wikidata entry for Inflammatory Bowel Diseases
 
 ![Hello](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/images/Wikidata%20Entry.png)
 
+# Dependencies
+The code utilizes D3.js functions to create, update, and handle interactions with the pie chart, as well as to manipulate the DOM (Document Object Model) for dynamic visualizations. 
+
 # Areas for Improvement
-If you wish to contribute, please see the ![instructions here](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/CONTRIBUTING.md)
+If you wish to contribute, please see the instructions [here](https://github.com/Abi2222/Programming-in-the-Life-Sciences-PRA3006-/blob/main/CONTRIBUTING.md). Here are some identified issues:
 * The user needs to manually search the Wikidata entry to find the Wikidata ID for a disease, it might be possible to skip this step
 
